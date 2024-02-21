@@ -17,7 +17,7 @@ w = [[0 for j in range(M+1)] for i in range(N+1)]
 print(w)
 
 def funcion(i, j):
-    return None
+    return 0
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -33,23 +33,40 @@ for k in range(100): # iteramos 100 veces. de momento, luego pondremos condicion
     for i in range(1, N):
         for j in range(1, M):
             w[i][j] = (h**2 * (w[i+1][j] + w[i-1][j]) + k**2 * (w[i][j+1] + w[i][j-1]) - h**2 * k**2 * funcion(i, j)) / (2*(h**2 + k**2))
-            print(w[i][j])
+print(w[i][j])
+
+# Mostrar la solución
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+# Define las coordenadas x y y de la malla
+x = np.linspace(a, b, N+1)
+y = np.linspace(c, d, M+1)
+
+# Crea una malla 2D con numpy
+X, Y = np.meshgrid(x, y)
+
+# Convierte la lista w en un array de NumPy
+Z = np.array(w)
+
+# Grafica la función Z como una superficie en 3D
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, cmap='viridis')
+
+# Etiqueta los ejes
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('w')
+
+# Muestra la gráfica
+plt.show()
             
 '''Ejemplo 1: laplaciano. La A es el gradiente.
 Au = 0  0<x<1, 0<y<1
 u(0,y) = u(x,0) = u(x, 1) = 0
 u(1, y) = 1'''
 
-# Mostrar la solución
-import matplotlib.pyplot as plt
-import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
 
-x = np.linspace(a, b, N+1)
-y = np.linspace(c, d, M+1)
-X, Y = np.meshgrid(x, y)
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, w)
-plt.show()
 
