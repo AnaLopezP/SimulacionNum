@@ -14,19 +14,19 @@ k = d-c/M
 
 # Inicializar la matriz
 w = [[0 for j in range(M+1)] for i in range(N+1)]
-print(w)
 
+# Defino la funcion
 def funcion(i, j):
     return 0
 
 # Condiciones de frontera
 for i in range(1, N):
     w[i][0] = 0
-    w[i][M] = 1
+    w[i][M] = i**2
     
 for j in range(1, M):
-    w[0][j] = 0
-    w[N][j] = 0
+    w[0][j] = 1 - j**2
+    w[N][j] = 1
     
 #recorremos los puntos interiores de la malla
 for k in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
@@ -58,7 +58,7 @@ ax.plot_surface(X, Y, Z, cmap='viridis')
 # Etiqueta los ejes
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
-ax.set_zlabel('w')
+ax.set_zlabel('Z')
 
 # Muestra la gráfica
 plt.show()
