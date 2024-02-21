@@ -22,17 +22,17 @@ def funcion(i, j):
 # Condiciones de frontera
 for i in range(1, N):
     w[i][0] = 0
-    w[i][M] = i**2
+    w[i][M] = 0
     
 for j in range(1, M):
-    w[0][j] = 1 - j**2
+    w[0][j] = 0
     w[N][j] = 1
     
 #recorremos los puntos interiores de la malla
 for k in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
     for i in range(1, N):
         for j in range(1, M):
-            w[i][j] = (h**2 * (w[i+1][j] + w[i-1][j]) + k**2 * (w[i][j+1] + w[i][j-1]) - h**2 * k**2 * funcion(i, j)) / (2*(h**2 + k**2))
+            w[i][j] = (k**2 * (w[i+1][j] + w[i-1][j]) + h**2 * (w[i][j+1] + w[i][j-1]) - h**2 * k**2 * funcion(i, j)) / (2*(h**2 + k**2))
 print(w[i][j])
 
 # Mostrar la solución
@@ -68,5 +68,12 @@ Au = 0  0<x<1, 0<y<1
 u(0,y) = u(x,0) = u(x, 1) = 0
 u(1, y) = 1'''
 
+'''Ejemplo 2: 
+Au = 0
+u(x, 0) = 0, u(x, 1) = x**2
+u(0, y) = 1 -y**2, u(1, y) = 1'''
 
-
+'''Ejemplo 3:
+Au = 2u
+u(0, y)= u(x, 0) = u(x, 1) = 0
+u(1, y) = 1'''
