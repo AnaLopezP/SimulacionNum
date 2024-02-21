@@ -1,38 +1,55 @@
 # a, b, c y d son las esquinas de la malla
-a = float(input("Ingrese el valor de a: "))
-b = float(input("Ingrese el valor de b: "))
-c = float(input("Ingrese el valor de c: "))
-d = float(input("Ingrese el valor de d: "))
+a = int(input("Ingrese el valor de a: "))
+b = int(input("Ingrese el valor de b: "))
+c = int(input("Ingrese el valor de c: "))
+d = int(input("Ingrese el valor de d: "))
 # Los límites de i y j
-N = float(input("Ingrese el valor de N: "))
-M = float(input("Ingrese el valor de M: "))
+N = int(input("Ingrese el valor de N: "))
+M = int(input("Ingrese el valor de M: "))
 
 # Los pasos de i y j
 h = b-a/N
 k = d-c/M
 
-# Inicializar la matriz
-w = [[]]
 
-# Creamos la matriz
-for i in range(N):
-    for j in range(M):
-        w[i][j] = 0
+# Inicializar la matriz
+w = [[0 for j in range(M+1)] for i in range(N+1)]
+print(w)
 
 def funcion(i, j):
     return None
 
 # Condiciones de frontera
 for i in range(1, N):
-    w[i][0] = None
-    w[i][M] = None
+    w[i][0] = 0
+    w[i][M] = 1
     
 for j in range(1, M):
-    w[0][j] = None
-    w[N][j] = None
+    w[0][j] = 0
+    w[N][j] = 0
     
 #recorremos los puntos interiores de la malla
 for k in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
     for i in range(1, N):
         for j in range(1, M):
-            w[i][j] = (h**2+k**2)**2*(k**2*(w[i+1][j]+w[i-1][j]) + h**2*(w[i][j+1]+w[i][j-1]))/(2*(h**2+k**2)**2)
+            w[i][j] = (h**2 * (w[i+1][j] + w[i-1][j]) + k**2 * (w[i][j+1] + w[i][j-1]) - h**2 * k**2 * funcion(i, j)) / (2*(h**2 + k**2))
+            print(w[i][j])
+            
+'''Ejemplo 1: laplaciano. La A es el gradiente.
+Au = 0  0<x<1, 0<y<1
+u(0,y) = u(x,0) = u(x, 1) = 0
+u(1, y) = 1'''
+
+# Mostrar la solución
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+
+x = np.linspace(a, b, N+1)
+y = np.linspace(c, d, M+1)
+X, Y = np.meshgrid(x, y)
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, w)
+plt.show()
+
