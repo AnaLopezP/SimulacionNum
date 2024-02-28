@@ -29,7 +29,7 @@ for j in range(1, M):
     w[N][j] = 1
     
 #recorremos los puntos interiores de la malla
-for k in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
+for rana in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
     for i in range(1, N):
         for j in range(1, M):
             w[i][j] = (k**2 * (w[i+1][j] + w[i-1][j]) + h**2 * (w[i][j+1] + w[i][j-1]) - h**2 * k**2 * funcion(i, j)) / (2*(h**2 + k**2))
