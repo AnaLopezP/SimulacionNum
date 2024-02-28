@@ -26,7 +26,7 @@ for i in range(1, N):
     
 for j in range(1, M):
     w[0][j] = 0
-    w[N][j] = 1
+    w[N][j] = 0
     
 #recorremos los puntos interiores de la malla
 for rana in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
