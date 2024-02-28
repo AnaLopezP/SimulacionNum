@@ -1,11 +1,15 @@
+import numpy as np
 # a, b, c y d son las esquinas de la malla
 a = int(input("Ingrese el valor de a: "))
 b = int(input("Ingrese el valor de b: "))
+b = np.pi
 c = int(input("Ingrese el valor de c: "))
 d = int(input("Ingrese el valor de d: "))
+d = np.pi
 # Los límites de i y j
 N = int(input("Ingrese el valor de N: "))
 M = int(input("Ingrese el valor de M: "))
+
 
 # Los pasos de i y j
 h = (b-a)/N
@@ -17,16 +21,17 @@ w = [[0 for j in range(M+1)] for i in range(N+1)]
 
 # Defino la funcion
 def funcion(i, j):
+    # las x = a + h*i y las y = c + k*j
     return 0
 
 # Condiciones de frontera
 for i in range(1, N):
     w[i][0] = 0
-    w[i][M] = (a + i*h)**2
+    w[i][M] = 0
     
 for j in range(1, M):
-    w[0][j] = 1 - (c + j*k)**2
-    w[N][j] = 1
+    w[0][j] = c + k*j
+    w[N][j] = c + k*j
     
 #recorremos los puntos interiores de la malla
 for rana in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
