@@ -77,3 +77,5 @@ u(0, y) = 1 -y**2, u(1, y) = 1'''
 Au = 2u
 u(0, y)= u(x, 0) = u(x, 1) = 0
 u(1, y) = 1'''#el señor dice que la u es la w, y que entomces en la f tenemos que poner w y la w original hay que cambiarla 
+
+# el laplaciano es la divergencia del gradiente. el gradiente es el triangulo para abajo. osea que la A = traángulo al cuadrado
