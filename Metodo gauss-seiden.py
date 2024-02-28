@@ -8,8 +8,8 @@ N = int(input("Ingrese el valor de N: "))
 M = int(input("Ingrese el valor de M: "))
 
 # Los pasos de i y j
-h = b-a/N
-k = d-c/M
+h = (b-a)/N
+k = (d-c)/M
 
 
 # Inicializar la matriz
@@ -79,3 +79,4 @@ u(1, y) = 1'''#el señor dice que la u es la w, y que entomces en la f tenemos q
 
 # el laplaciano es la divergencia del gradiente. el gradiente es el triangulo para abajo. osea que la A = traángulo al cuadrado
 #nos va a preguntar por un análisis de la gráfica
+# el laplaciano minimiza la energia. es como cuando una lona en tensión cae por su propio peso
