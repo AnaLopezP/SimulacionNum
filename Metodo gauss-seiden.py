@@ -79,4 +79,4 @@ u(1, y) = 1'''#el señor dice que la u es la w, y que entomces en la f tenemos q
 
 # el laplaciano es la divergencia del gradiente. el gradiente es el triangulo para abajo. osea que la A = traángulo al cuadrado
 #nos va a preguntar por un análisis de la gráfica
-# el laplaciano minimiza la energia. es como cuando una lona en tensión cae por su propio peso
+# el laplaciano minimiza la energia. es como cuando una lona en tensión cae por su propio peso, hace que la tension sea la minima 
