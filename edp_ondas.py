@@ -73,3 +73,9 @@ plt.show()
 # el laplaciano es la divergencia del gradiente. el gradiente es el triangulo para abajo. osea que la A = traángulo al cuadrado
 #nos va a preguntar por un análisis de la gráfica
 # el laplaciano minimiza la energia. es como cuando una lona en tensión cae por su propio peso, hace que la tension sea la minima 
+
+'''
+Ejercicio 1L:
+f(x) = x(b-x)
+g(x) = 0
+'''
