@@ -2,10 +2,8 @@ import numpy as np
 # a, b, c y d son las esquinas de la malla
 a = 0
 b = int(input("Ingrese el valor de b: "))
-b = np.pi
 c = 0
 d = int(input("Ingrese el valor de d: "))
-d = np.pi
 # Los límites de i y j
 N = int(input("Ingrese el valor de N: "))
 M = int(input("Ingrese el valor de M: "))
@@ -42,6 +40,7 @@ for i in range(1, N):
     for j in range(1, M):
         w[j+1][i] = 2*(1-p**2)*w[j][i] - w[j-1][i] + p**2*(w[j][i+1] + w[j][i-1])
 print(w[i][j])
+
 # Mostrar la solución
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D

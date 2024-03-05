@@ -2,10 +2,8 @@ import numpy as np
 # a, b, c y d son las esquinas de la malla
 a = int(input("Ingrese el valor de a: "))
 b = int(input("Ingrese el valor de b: "))
-b = np.pi
 c = int(input("Ingrese el valor de c: "))
 d = int(input("Ingrese el valor de d: "))
-d = np.pi
 # Los límites de i y j
 N = int(input("Ingrese el valor de N: "))
 M = int(input("Ingrese el valor de M: "))
