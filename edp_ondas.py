@@ -7,13 +7,13 @@ d = int(input("Ingrese el valor de d: "))
 # Los límites de i y j
 N = int(input("Ingrese el valor de N: "))
 M = int(input("Ingrese el valor de M: "))
-v = int(input("Ingrese el valor de v (velocidad): "))
+v = float(input("Ingrese el valor de v (velocidad): "))
 
 
 # Los pasos de i y j
 h = (b-a)/N
 k = (d-c)/M
-p = v*k/h
+p = (v*k)/h
 
 # Inicializar la matriz
 w = [[0 for j in range(M+1)] for i in range(N+1)]
@@ -21,7 +21,7 @@ w = [[0 for j in range(M+1)] for i in range(N+1)]
 # Defino las funciones (nos las da el profe al principio de cada ejercicio)
 def f(x):
     # las x = a + h*i y las y = c + k*j
-    return 0
+    return (x*(b-x))
 
 def g(x):
     return 0
@@ -29,16 +29,17 @@ def g(x):
 # Condiciones de frontera
 for i in range(1, N):
     w[0][i] = f(h*i)
-    w[1][i] = w[0][1] + k*g(h*i)
+    w[1][i] = w[0][i] + k*g(h*i)
     
 for j in range(1, M):
     w[j][0] = 0
     w[j][N] = 0
     
 #recorremos los puntos interiores de la malla
-for i in range(1, N):
-    for j in range(1, M):
-        w[j+1][i] = 2*(1-p**2)*w[j][i] - w[j-1][i] + p**2*(w[j][i+1] + w[j][i-1])
+for rana in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
+    for i in range(1, N):
+        for j in range(1, M):
+            w[j+1][i] = 2*(1-p**2)*w[j][i] + (p**2)*(w[j][i+1] + w[j][i-1]) - w[j-1][i]
 print(w[i][j])
 
 # Mostrar la solución
