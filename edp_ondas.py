@@ -20,7 +20,7 @@ p = v*k/h
 # Inicializar la matriz
 w = [[0 for j in range(M+1)] for i in range(N+1)]
 
-# Defino la funcion
+# Defino las funciones (nos las da el profe al principio de cada ejercicio)
 def f(x):
     # las x = a + h*i y las y = c + k*j
     return 0
