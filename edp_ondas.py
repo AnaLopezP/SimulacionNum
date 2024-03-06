@@ -55,7 +55,7 @@ X, Y = np.meshgrid(x, y)
 # Grafica la función Z como una superficie en 3D
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, w, cmap='viridis')
+ax.plot_surface(X, Y, w.T, cmap='viridis')
 
 # Etiqueta los ejes
 ax.set_xlabel('X')
