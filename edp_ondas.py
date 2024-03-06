@@ -7,7 +7,6 @@ N = int(input("Ingrese el valor de N: "))
 M = int(input("Ingrese el valor de M: "))
 v = float(input("Ingrese el valor de v (velocidad): "))
 
-
 # Los pasos de i y j
 h = b/N
 k = d/M
@@ -19,10 +18,13 @@ w = np.zeros((N+1, M+1))
 # Defino las funciones (nos las da el profe al principio de cada ejercicio)
 def f(x):
     # las x = a + h*i y las y = c + k*j
-    return x*(b-x)
+    if 1 <= x <= 3:
+        return 1
+    else:
+        return 0
 
 def g(x):
-    return 0
+    return np.sin(x)
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -81,4 +83,20 @@ Ejercicio 2
 f(x) = x en x < b/2
        b - x en x > b/2
 '''
+''' 
+Ejercicio 3
+f(x) = 0
+g(x) = sen(x)
+b = pi
+'''
 
+'''
+Ejercicio 4
+f(x) = 0 
+       1 en 1 < x < 3
+b = 6
+d = 24
+N = 600
+M= 2400
+v = 0.5
+'''
