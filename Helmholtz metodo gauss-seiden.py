@@ -17,7 +17,7 @@ k = (d-c)/M
 
 
 # Inicializar la matriz
-w = [[0 for j in range(M+1)] for i in range(N+1)]
+w = np.zeros((N+1, M+1))
 
 # Defino la funcion
 def funcion(i, j):
@@ -51,13 +51,10 @@ y = np.linspace(c, d, M+1)
 # Crea una malla 2D con numpy
 X, Y = np.meshgrid(x, y)
 
-# Convierte la lista w en un array de NumPy
-Z = np.array(w)
-
 # Grafica la función Z como una superficie en 3D
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, Z, cmap='viridis')
+ax.plot_surface(X, Y, w.T, cmap='viridis')
 
 # Etiqueta los ejes
 ax.set_xlabel('X')
