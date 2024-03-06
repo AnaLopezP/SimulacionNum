@@ -1,8 +1,6 @@
 import numpy as np
 # a, b, c y d son las esquinas de la malla
-a = 0
 b = int(input("Ingrese el valor de b: "))
-c = 0
 d = int(input("Ingrese el valor de d: "))
 # Los límites de i y j
 N = int(input("Ingrese el valor de N: "))
@@ -11,35 +9,35 @@ v = float(input("Ingrese el valor de v (velocidad): "))
 
 
 # Los pasos de i y j
-h = (b-a)/N
-k = (d-c)/M
+h = b/N
+k = d/M
 p = (v*k)/h
 
 # Inicializar la matriz
-w = [[0 for j in range(M+1)] for i in range(N+1)]
+w = np.zeros((N+1, M+1))
 
 # Defino las funciones (nos las da el profe al principio de cada ejercicio)
 def f(x):
     # las x = a + h*i y las y = c + k*j
-    return (x*(b-x))
+    return x*(b-x)
 
 def g(x):
     return 0
 
 # Condiciones de frontera
 for i in range(1, N):
-    w[0][i] = f(h*i)
-    w[1][i] = w[0][i] + k*g(h*i)
+    w[i][0] = f(h*i)
+    w[i][1] = w[i][0] + k*g(h*i)
     
 for j in range(1, M):
-    w[j][0] = 0
-    w[j][N] = 0
+    w[0][j] = 0
+    w[N][j] = 0
     
 #recorremos los puntos interiores de la malla
-for rana in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
+for j in range(1, M):
     for i in range(1, N):
-        for j in range(1, M):
-            w[j+1][i] = 2*(1-p**2)*w[j][i] + (p**2)*(w[j][i+1] + w[j][i-1]) - w[j-1][i]
+        w[i][j+1] = 2*(1-p**2)*w[i][j] + (p**2)*(w[i+1][j] + w[i-1][j]) - w[i][j-1]
+
 print(w[i][j])
 
 # Mostrar la solución
@@ -48,19 +46,16 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 # Define las coordenadas x y y de la malla
-x = np.linspace(a, b, N+1)
-y = np.linspace(c, d, M+1)
+x = np.linspace(0, b, N+1)
+y = np.linspace(0, d, M+1)
 
 # Crea una malla 2D con numpy
 X, Y = np.meshgrid(x, y)
 
-# Convierte la lista w en un array de NumPy
-Z = np.array(w)
-
 # Grafica la función Z como una superficie en 3D
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, Z, cmap='viridis')
+ax.plot_surface(X, Y, w, cmap='viridis')
 
 # Etiqueta los ejes
 ax.set_xlabel('X')
@@ -79,4 +74,9 @@ plt.show()
 Ejercicio 1L:
 f(x) = x(b-x)
 g(x) = 0
+'''
+
+'''
+f(x) = x en x < b/2
+       b - x en x > b/2
 '''
