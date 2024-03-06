@@ -71,12 +71,14 @@ plt.show()
 # el laplaciano minimiza la energia. es como cuando una lona en tensión cae por su propio peso, hace que la tension sea la minima 
 
 '''
-Ejercicio 1L:
+Ejercicio 1:
 f(x) = x(b-x)
 g(x) = 0
 '''
 
 '''
+Ejercicio 2
 f(x) = x en x < b/2
        b - x en x > b/2
 '''
+
