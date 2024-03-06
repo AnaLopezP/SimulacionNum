@@ -24,7 +24,7 @@ def f(x):
         return 0
 
 def g(x):
-    return np.sin(x)
+    return 0
 
 # Condiciones de frontera
 for i in range(1, N):
