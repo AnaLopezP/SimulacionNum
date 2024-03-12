@@ -69,4 +69,6 @@ M = 400
 cuando el parámetro de la conductividad aumenta quiere decir que conduce peor,
 entonces hay un pico y se disipa más rápido
 
+Hay un limite en el parametro de h/raiz(2k). En este caso es 0.55
+
 '''
