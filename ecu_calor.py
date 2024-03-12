@@ -15,18 +15,18 @@ k = d/M
 w = np.zeros((N+1, M+1))
 
 def f(x):
-    return 0
+    return np.exp(-(x-b/2)**2)
 
 # Condiciones de frontera
 for i in range(1, N):
-    w[i][0] = 0
+    w[i][0] = f(i*h)
     w[i][1] = 0
     
 for j in range(1, M):
     w[0][j] = 0
     w[N][j] = 0
     
-for j in range(1, M):
+for j in range(0, M):
     for i in range(1, N):
         w[i][j+1] = (1-2*k*v**2/h**2)*w[i][j] + (k*v**2/h**2)*(w[i+1][j] + w[i-1][j])
         
@@ -57,3 +57,12 @@ ax.set_zlabel('Z')
 # Muestra la gráfica
 plt.show()
             
+'''
+Ejercicio 1
+f(x) = e^(-(x-b/2)^2)
+b= 5
+d = 10
+N= 40
+M = 400
+0.2 <v < 1.5
+'''
