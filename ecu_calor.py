@@ -65,4 +65,8 @@ d = 10
 N= 40
 M = 400
 0.2 <v < 1.5
+
+cuando el parámetro de la conductividad aumenta quiere decir que conduce peor,
+entonces hay un pico y se disipa más rápido
+
 '''
