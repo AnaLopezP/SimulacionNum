@@ -63,4 +63,3 @@ ax.set_zlabel('Z')
 
 # Muestra la gráfica
 plt.show()
-            
