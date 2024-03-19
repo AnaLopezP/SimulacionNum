@@ -16,12 +16,7 @@ lam = (k/h**2)*v**2
 w = np.zeros((N+1, M+1))
 
 def f(x):
-    if 0 < x < b/2:
-        return 1
-    elif b/2 < x < b:
-        return 0
-    else:
-        return 0
+    return np.exp(-(h*i-b/2)**2)
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -63,3 +58,11 @@ ax.set_zlabel('Z')
 
 # Muestra la gráfica
 plt.show()
+
+'''Ejercicio 1
+f(x) = e^(-(x-b/2)^2)
+b= 5
+d = 10
+N= 40
+M = 400
+0.2 <v < 1.5'''
