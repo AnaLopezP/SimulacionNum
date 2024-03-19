@@ -71,4 +71,7 @@ entonces hay un pico y se disipa más rápido
 
 Hay un limite en el parametro de h/raiz(2k). En este caso es 0.55
 
+Las curvas características hacen que el calor se halle en un pico y se disperse. Como hay una característica, 
+que habría que calcularla. En las ecuaciones de ondas había 2.
+
 '''
