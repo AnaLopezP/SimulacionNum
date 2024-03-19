@@ -16,7 +16,12 @@ lam = (k/h**2)*v**2
 w = np.zeros((N+1, M+1))
 
 def f(x):
-    return np.exp(-(h*i-b/2)**2)
+    if 0 < x < b/2:
+        return 1
+    elif b/2 < x < b:
+        return 0
+    else:
+        return 0
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -28,9 +33,9 @@ for j in range(1, M):
     w[N][j] = 0
     
 for l in range(100):
-    for j in range(0, M):
+    for j in range(1, M):
         for i in range(1, N):
-            w[i][j] = (lam*(w[i][j+1] + w[i][j-1]) + w[i][j-1])/1+2*lam
+            w[i][j] = (lam*(w[i][j+1] + w[i][j-1]) + w[i][j-1])/(1+2*lam)
             
 print(w[i][j])
 
