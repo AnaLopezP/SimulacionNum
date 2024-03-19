@@ -15,7 +15,12 @@ k = d/M
 w = np.zeros((N+1, M+1))
 
 def f(x):
-    return np.exp(-(x-b/2)**2)
+    if 0 < x < b/2:
+        return 1
+    elif b/2 < x < b:
+        return 0
+    else:
+        return 0
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -74,4 +79,11 @@ Hay un limite en el parametro de h/raiz(2k). En este caso es 0.55
 Las curvas características hacen que el calor se halle en un pico y se disperse. Como hay una característica, 
 que habría que calcularla. En las ecuaciones de ondas había 2.
 El calor fluye por la característica y se disipa por los laterales
+'''
+
+'''
+f(x) = 1 en 0<x<b/2
+f(x) = 0 en b/2<x<b
+
+mismas condiciones de frontera
 '''
