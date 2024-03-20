@@ -1,4 +1,6 @@
 # ESTO ES DIFERENCIA REGRESIVA PORQUE USAMOS LOS VALORES ANTERIORES
+# En las regresivas despejamos wi, j mientras que en las progresivas despejamos w i j+1
+# LAS ECUACIONES DE CALOR SON EDP PARABÓLICAS
 import numpy as np
 
 # a, b, c y d son las esquinas de la malla
