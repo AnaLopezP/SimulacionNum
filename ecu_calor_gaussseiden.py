@@ -19,7 +19,7 @@ lam = (k/h**2)*v**2
 w = np.zeros((N+1, M+1))
 
 def f(x):
-    return np.exp(-(x-2.5)**2)
+    return np.exp(-(x-b/2)**2)
 
 # Condiciones de frontera
 for i in range(1, N):
