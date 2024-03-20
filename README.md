@@ -9,5 +9,7 @@ No tenemos en cuenta el error
 
 Siempre que sea regresiva lo hacemos como un sistema lienal es decir, al pasar to do a w, podemos tratar como un sistema lineal, donde se resolverian con otro bucle las w
 
-Met de gauss-seiden lo que hace es iterar el sistema lineal. 
+Met de gauss-seiden lo que hace es iterar el sistema lineal, hallando wij. 
 El otro método es el de evolución, que lo que hace es tomar los valores anteriores (los de abajo de la malla) y halla el valor de wij+1. 
+
+Si no dice nada podemos usar el método que nos salga. 
