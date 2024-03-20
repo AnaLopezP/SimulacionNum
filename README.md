@@ -13,3 +13,5 @@ Met de gauss-seiden lo que hace es iterar el sistema lineal, hallando wij.
 El otro método es el de evolución, que lo que hace es tomar los valores anteriores (los de abajo de la malla) y halla el valor de wij+1. 
 
 Si no dice nada podemos usar el método que nos salga. 
+
+Tambien hay que calcular las característcas.
