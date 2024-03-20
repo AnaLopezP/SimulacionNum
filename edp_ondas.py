@@ -1,3 +1,5 @@
+# DIFERENCIAS PROGRESIVAS
+
 import numpy as np
 # a, b, c y d son las esquinas de la malla
 b = int(input("Ingrese el valor de b: "))

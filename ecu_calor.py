@@ -1,3 +1,4 @@
+# ESTE ES DIFERENCIA PROGRESIVA PORQUE USAMOS LOS VALORES SIGUIENTES
 import numpy as np
 
 # a, b, c y d son las esquinas de la malla

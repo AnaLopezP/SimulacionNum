@@ -1,3 +1,4 @@
+# ESTO ES DIFERENCIA REGRESIVA PORQUE USAMOS LOS VALORES ANTERIORES
 import numpy as np
 
 # a, b, c y d son las esquinas de la malla
