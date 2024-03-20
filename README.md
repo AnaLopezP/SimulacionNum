@@ -15,3 +15,5 @@ El otro método es el de evolución, que lo que hace es tomar los valores anteri
 Si no dice nada podemos usar el método que nos salga. 
 
 Tambien hay que calcular las característcas.
+
+El método de evolucion se usa para las edp hiperbólicas y algunas parabólicas.

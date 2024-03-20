@@ -19,12 +19,7 @@ lam = (k/h**2)*v**2
 w = np.zeros((N+1, M+1))
 
 def f(x):
-    if 0 < x < b/2:
-        return 1
-    elif b/2 < x < b:
-        return 0
-    else:
-        return 0
+    return np.exp(-(x-b/2)**2)
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -38,7 +33,8 @@ for j in range(1, M):
 for l in range(100):
     for j in range(1, M):
         for i in range(1, N):
-            w[i][j] = (lam*(w[i][j+1] + w[i][j-1]) + w[i][j-1])/(1+2*lam)
+           # w[i][j] = (lam*(w[i][j+1] + w[i][j-1]) + w[i][j-1])/(1+2*lam)
+           w[i][j] = ((k/h**2)*(w[i+1][j] + w[i-1][j]) + (1+h*i)*w[i][j-1])/(1+h*i+2*(k/h**2))
             
 print(w[i][j])
 
@@ -74,3 +70,8 @@ d = 10
 N= 40
 M = 400
 0.2 <v < 1.5'''
+
+'''
+Ejercicio cuaderno dia 20/03. 
+Por culpa del (1+x), la gráfica se tuerce para un lado al bajar el calor
+'''
