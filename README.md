@@ -28,3 +28,10 @@ El método de evolucion se usa para las edp hiperbólicas y algunas parabólicas
 
 ¿cómo se resuelve un sistema lineal por gauss-seiden?
 hay una ecuacion para cada punto de la malla, en cada punto intervienen distintos valores. Hay una incognita y ecuacion por cada punto de la malla. Al ser un sistema lineal, podemos ponerlo en forma matricial y hace cosas con las matrices (triangulacion, creo)
+
+
+EXAMEN
+1) Clasifica la EDP (no entra en el segundo control)
+2) Discretizar la EDP. Pasos de arriba
+3) Saber como resolverlo (evolucion o gauss-seiden)
+4) Mandamos tanto el programa como la imagen.
