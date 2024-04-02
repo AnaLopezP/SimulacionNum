@@ -19,7 +19,7 @@ lam = (k/h**2)*v**2
 w = np.zeros((N+1, M+1))
 
 def f(x):
-    return np.exp(-(x-b/2)**2)
+    return np.exp(-(x-2.5)**2)
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -35,8 +35,9 @@ for l in range(100):
         for i in range(1, N):
            # base w[i][j] = (lam*(w[i][j+1] + w[i][j-1]) + w[i][j-1])/(1+2*lam)
            # ejercicio 1 w[i][j] = ((k/h**2)*(w[i+1][j] + w[i-1][j]) + (1+h*i)*w[i][j-1])/(1+h*i+2*(k/h**2))
-           # ejercicio 2 
-           w[i][j] = (k*(w[i+1][j] + w[i-1][j]) + h**2*(1+h*i)*w[i][j-1])/(2*k-k*h**2+h**2*(1+h*i))
+           # ejercicio 2 w[i][j] = (k*(w[i+1][j] + w[i-1][j]) + h**2*(1+h*i)*w[i][j-1])/(2*k-k*h**2+h**2*(1+h*i))
+           # ejercicio 2 abril
+           w[i][j] = (-k*(w[i+1][j] - w[i-1][j]) + h**2*(1+h*i)*w[i][j-1])/(-2*k+k*h**3*i-h**2*(1+h*i))
             
 print(w[i][j])
 
