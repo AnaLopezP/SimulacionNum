@@ -4,12 +4,12 @@
 import numpy as np
 
 # a, b, c y d son las esquinas de la malla
-b = int(input("Ingrese el valor de b: "))
-d = int(input("Ingrese el valor de d: "))
+b = int(input("Ingrese el valor de b: ")) #x
+d = int(input("Ingrese el valor de d: ")) #t
 # Los límites de i y j
 N = int(input("Ingrese el valor de N: "))
 M = int(input("Ingrese el valor de M: "))
-v = float(input("Ingrese el valor de v (conductividad): ")) #creo que es el alfa
+v = float(input("Ingrese el valor de v (conductividad): ")) #alfa (tiene que ser menor que el máximo formula en el cuad)
 
 # Los pasos de i y j
 h = b/N
@@ -19,7 +19,7 @@ lam = (k/h**2)*v**2
 w = np.zeros((N+1, M+1))
 
 def f(x):
-    return np.exp(-(x-2.5)**2)
+    return np.exp(-(x-b/2)**2)
 
 # Condiciones de frontera
 for i in range(1, N):
