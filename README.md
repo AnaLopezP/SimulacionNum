@@ -34,4 +34,5 @@ EXAMEN
 1) Clasifica la EDP (no entra en el segundo control)
 2) Discretizar la EDP. Pasos de arriba
 3) Saber como resolverlo (evolucion o gauss-seiden)
-4) Mandamos tanto el programa como la imagen.
+4) Programarla
+5) Mandamos tanto el programa como la imagen.
