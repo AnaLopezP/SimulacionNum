@@ -36,3 +36,10 @@ EXAMEN
 3) Saber como resolverlo (evolucion o gauss-seiden)
 4) Programarla
 5) Mandamos tanto el programa como la imagen.
+
+## DISCRETIZAR LA DERIVADA CRUZADA
+Aplicamos el polinomio de Taylor como está en el cuaderno, calculado en los puntos alrededor del punto i, j, hallando los dos de arriba y los dos de abajo. Las diferencias están en los signos de los pasos. 
+
+Si operamos, vemos que se va todo y nos queda una expresion (cuaderno), en la que solo está la derivada cruzada.
+
+Cuando tengamos una derivada cruzada tenemos que sustituirla por la formula. 
