@@ -1,4 +1,5 @@
 # MÉTODO REGRESIVO 
+# EDP ELIPTICA CUANDO TIENE LAS DOS DERIVADAS DOBLES
 
 import numpy as np
 # a, b, c y d son las esquinas de la malla
