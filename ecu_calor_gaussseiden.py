@@ -37,6 +37,7 @@ for l in range(100):
            # ejercicio 1 w[i][j] = ((k/h**2)*(w[i+1][j] + w[i-1][j]) + (1+h*i)*w[i][j-1])/(1+h*i+2*(k/h**2))
            # ejercicio 2 w[i][j] = (k*(w[i+1][j] + w[i-1][j]) + h**2*(1+h*i)*w[i][j-1])/(2*k-k*h**2+h**2*(1+h*i))
            # ejercicio 2 abril
+           
            w[i][j] = (-k*(w[i+1][j] + w[i-1][j]) - h**2*(1+h*i)*w[i][j-1])/(-2*k+k*h**3*i-h**2*(1+h*i))
             
 print(w[i][j])

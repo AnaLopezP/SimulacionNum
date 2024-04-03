@@ -4,9 +4,9 @@
 import numpy as np
 # a, b, c y d son las esquinas de la malla
 a = int(input("Ingrese el valor de a: "))
-b = int(input("Ingrese el valor de b: "))
+b = float(input("Ingrese el valor de b: "))
 c = int(input("Ingrese el valor de c: "))
-d = int(input("Ingrese el valor de d: "))
+d = float(input("Ingrese el valor de d: "))
 # Los límites de i y j
 N = int(input("Ingrese el valor de N: "))
 M = int(input("Ingrese el valor de M: "))
@@ -21,24 +21,25 @@ k = (d-c)/M
 w = np.zeros((N+1, M+1))
 
 # Defino la funcion
-def funcion(i, j):
+def funcion(i):
     # las x = a + h*i y las y = c + k*j
-    return 0
+    return np.exp(-(i*h - b/2)**2)
 
 # Condiciones de frontera
 for i in range(1, N):
-    w[i][0] = 0
+    w[i][0] = funcion(i*h)
     w[i][M] = 0
     
 for j in range(1, M):
-    w[0][j] = c + k*j
-    w[N][j] = c + k*j
+    w[0][j] = 0
+    w[N][j] = 0
     
 #recorremos los puntos interiores de la malla
 for rana in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
     for i in range(1, N):
         for j in range(1, M):
-            w[i][j] = (k**2 * (w[i+1][j] + w[i-1][j]) + h**2 * (w[i][j+1] + w[i][j-1]) - h**2 * k**2 * funcion(i, j)) / (2*(h**2 + k**2))
+            w[i][j] = (4*k*(w[i+1][j] + w[i-1][j]) + (w[i+1][j+1] + w[i-1][j-1] - w[i+1][j-1] - w[i-1][j+1])*h)/(8*k)
+            #w[i][j] = (k**2 * (w[i+1][j] + w[i-1][j]) + h**2 * (w[i][j+1] + w[i][j-1]) - h**2 * k**2 * funcion(i, j)) / (2*(h**2 + k**2))
 print(w[i][j])
 # Mostrar la solución
 import matplotlib.pyplot as plt
