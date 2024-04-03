@@ -1,4 +1,5 @@
 # DIFERENCIAS PROGRESIVAS
+# EDP HIPERBÓLICAS SI TIENE LA DERIVADA CRUZADA
 
 import numpy as np
 # a, b, c y d son las esquinas de la malla

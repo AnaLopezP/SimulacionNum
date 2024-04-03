@@ -1,3 +1,6 @@
+# EDP ELÍPTICA MÉTODO REGRESIVO
+# EDP ELÍPTICA CUANDO TIENE LAS DOS DERIVADAS DOBLES
+
 import numpy as np
 # a, b, c y d son las esquinas de la malla
 a = int(input("Ingrese el valor de a: "))

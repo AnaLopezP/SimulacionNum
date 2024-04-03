@@ -1,4 +1,5 @@
 # ESTE ES DIFERENCIA PROGRESIVA PORQUE USAMOS LOS VALORES SIGUIENTES
+# EDP PARABÓLICAS SI HAY UNA DE LAS DERIVADAS DOBLES
 import numpy as np
 
 # a, b, c y d son las esquinas de la malla
