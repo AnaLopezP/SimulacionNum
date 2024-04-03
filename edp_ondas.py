@@ -1,5 +1,5 @@
 # DIFERENCIAS PROGRESIVAS
-# EDP HIPERBÓLICAS SI TIENE LA DERIVADA CRUZADA
+# EDP ELIPTICA, DOS DERIVADAS DOBLES
 
 import numpy as np
 # a, b, c y d son las esquinas de la malla

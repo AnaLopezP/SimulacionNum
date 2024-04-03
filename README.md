@@ -42,4 +42,4 @@ Aplicamos el polinomio de Taylor como está en el cuaderno, calculado en los pun
 
 Si operamos, vemos que se va todo y nos queda una expresion (cuaderno), en la que solo está la derivada cruzada.
 
-Cuando tengamos una derivada cruzada tenemos que sustituirla por la formula. 
+Cuando tengamos una derivada cruzada tenemos que sustituirla por la formula. Tenemos que despejar la wij siempre, no se pueden usar métodos progresivos con la derivada cruzada.
