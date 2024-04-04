@@ -22,9 +22,9 @@ El método de evolucion se usa para las edp hiperbólicas y algunas parabólicas
 
 1) Nos dan una EDP no está en forma canónica --> tenemos que discretizar las derivadas parciales
 2) Aproximamos las derivadas --> sustituimos las aproximaciones en la EDP y despejamos la primera derivada parcial
-3) Discretizamos la EDP --> despejamos wij o wij+1 según lo que queramos (diferencias progresivas o diferencias regresivas)
+3) Discretizamos la EDP --> Esto indica la manera en la que aproximamos las derivadas, si con los puntos posteriores o los anteriores. (diferencias progresivas o diferencias regresivas)
 4) Si hemos usado diferencias regresivas, el paso ahora es negativo, porque evaluamos en i,j lo que vale i, j-1. En la primera derivada da igual cual de las dos opciones usemos.
-5) Tenemos que resolver la ecuacion, para lo que tenemos 2 métodos: sistema de gauss seiden o metodo de evolucion. El primero es el de las 100 iteraciones, que resuelve un sistema lineal, mientras que el de evolucion es el otro, en el que despejas wij. (Hallamos los valores posteriores con los anteriores)
+5) Tenemos que resolver la ecuacion, para lo que tenemos 2 métodos: sistema de gauss seiden o metodo de evolucion. El primero es el de las 100 iteraciones, que resuelve un sistema lineal, mientras que el de evolucion es el otro, en el que despejas wij+1. (Hallamos los valores posteriores con los anteriores)
 
 ¿cómo se resuelve un sistema lineal por gauss-seiden?
 hay una ecuacion para cada punto de la malla, en cada punto intervienen distintos valores. Hay una incognita y ecuacion por cada punto de la malla. Al ser un sistema lineal, podemos ponerlo en forma matricial y hace cosas con las matrices (triangulacion, creo)
