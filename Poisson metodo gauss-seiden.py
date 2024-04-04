@@ -23,7 +23,7 @@ w = np.zeros((N+1, M+1))
 # Defino la funcion
 def funcion(i):
     # las x = a + h*i y las y = c + k*j
-    return np.exp(-(i*h - 0.25)**2)
+    return np.exp(-(i - 2.5)**2)
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -38,7 +38,8 @@ for j in range(1, M):
 for rana in range(100): # iteramos 100 veces. de momento, luego pondremos condiciones de parada
     for i in range(1, N):
         for j in range(1, M):
-            w[i][j] = (2*k**2*(w[i+1][j] + w[i-1][j]) + h*k*(w[i+1][j+1] + w[i-1][j-1] - w[i+1][j-1] - w[i-1][j+1]) + 2*h**2*(w[i][j+1] + w[i][j-1]))/(4*(h**2 + k**2))
+            w[i][j] = ((k/h**2)*(w[i+1][j] + w[i-1][j]) + (1+h*i)*w[i][j-1])/(1+h*i+2*(k/h**2))
+            #w[i][j] = (2*k**2*(w[i+1][j] + w[i-1][j]) + h*k*(w[i+1][j+1] + w[i-1][j-1] - w[i+1][j-1] - w[i-1][j+1]) + 2*h**2*(w[i][j+1] + w[i][j-1]))/(4*(h**2 + k**2))
             #w[i][j] = (4*k**2*(w[i+1][j] + w[i-1][j]) + h*k*(w[i+1][j+1] + w[i-1][j-1] - w[i+1][j-1] - w[i-1][j+1]) + 4*h**2*(w[i][j+1] + w[i][j-1]))/(8*(h**2 + k**2))
             #w[i][j] = (4*k*(w[i+1][j] + w[i-1][j]) + (w[i+1][j+1] + w[i-1][j-1] - w[i+1][j-1] - w[i-1][j+1])*h)/(8*k)
             #w[i][j] = (k**2 * (w[i+1][j] + w[i-1][j]) + h**2 * (w[i][j+1] + w[i][j-1]) - h**2 * k**2 * funcion(i, j)) / (2*(h**2 + k**2))
