@@ -21,7 +21,10 @@ w = np.zeros((N+1, M+1))
 # Defino las funciones (nos las da el profe al principio de cada ejercicio)
 def f(x):
     # las x = a + h*i y las y = c + k*j
-    return 0
+    if 1 < x < 3:
+        return 1
+    else:
+        return 0
 
 def g(x):
     return 0
@@ -32,7 +35,7 @@ for i in range(1, N):
     w[i][1] = w[i][0] + k*g(i*h)
     
 for j in range(1, M):
-    w[0][j] = 3*np.sin(k*j)
+    w[0][j] = 0 
     w[N][j] = 0
     
 #recorremos los puntos interiores de la malla
