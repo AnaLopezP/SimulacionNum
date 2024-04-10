@@ -21,13 +21,10 @@ w = np.zeros((N+1, M+1))
 # Defino las funciones (nos las da el profe al principio de cada ejercicio)
 def f(x):
     # las x = a + h*i y las y = c + k*j
-    if 1 < x < 3:
-        return 1
-    else:
-        return 0
+    return (10*x*(5-x))
 
 def g(x):
-    return 0
+    return ((250/4)-10*x*(5-x))
 
 # Condiciones de frontera
 for i in range(1, N):
@@ -41,8 +38,7 @@ for j in range(1, M):
 #recorremos los puntos interiores de la malla
 for j in range(1, M):
     for i in range(1, N):
-        w[i][j+1] = 2*(1-p**2)*w[i][j] + (p**2)*(w[i+1][j] + w[i-1][j]) - w[i][j-1]
-
+        w[i][j+1] =((k**2*v**2/h**2)) * (w[i+1][j] + w[i-1][j]-2*w[i][j]) +  (2*w[i][j] - w[i][j-1]) - ((k**2*v**2)*w[i][j])
 print(w[i][j])
 
 # Mostrar la solución
